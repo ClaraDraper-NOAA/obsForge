@@ -134,6 +134,13 @@ atmosbufrdump:
       script_file:
         - retrieval_amv_avhrr.py
         - retrieval_amv_obs_builder.py
+    retrieval_amv_leogeo:
+      input_file: satwnd.tm00.bufr_d
+      output_file: retrieval_amv_leogeo_{splits/satId}.nc
+      mapping_file: retrieval_amv_leogeo.yaml
+      script_file:
+        - retrieval_amv_leogeo.py
+        - retrieval_amv_obs_builder.py
     retrieval_amv_modis:
       input_file: satwnd.tm00.bufr_d
       output_file: retrieval_amv_modis_{splits/satId}.nc
@@ -179,6 +186,14 @@ atmosbufrdump:
       mapping_file: prepbufr_aircraft.yaml
       script_file: 
         - prepbufr_aircraft.py
+        - prepbufr_obs_builder.py
+      preserve_rel_path: True
+    prepbufr_proflr:
+      input_file: prepbufr
+      output_file: prepbufr_proflr.nc
+      mapping_file: prepbufr_proflr.yaml
+      script_file:
+        - prepbufr_proflr.py
         - prepbufr_obs_builder.py
       preserve_rel_path: True
     prepbufr_sfcshp:
